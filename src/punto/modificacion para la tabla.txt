@@ -1,0 +1,24 @@
+
+
+-----------------Esto van en la parte del boton que usas para la taba en el controlador
+
+List<String> datos = new ArrayList<>();
+String consulta = _model.MostrarRegistro("empleados", "idUsuario,nombre,apellidoP,area,contraseña", "idUsuario>=1");
+datos.addAll(Arrays.asList(consulta.split(",")));
+
+DefaultTableModel tabla2 = new DefaultTableModel();
+tabla2.addColumn("idEmpleado");
+tabla2.addColumn("Nombre");
+tabla2.addColumn("Apellido");
+tabla2.addColumn("Area");
+tabla2.addColumn("Contraseña");
+
+_todo.tablaT.setModel(tabla2);
+
+for (int i = 0; i < datos.size(); i += 5) {
+    Object[] fila = new Object[5];
+    for (int j = 0; j < 5; j++) {
+        fila[j] = datos.get(i + j);
+    }
+    tabla2.addRow(fila);
+}
