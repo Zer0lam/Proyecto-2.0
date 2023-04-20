@@ -31,11 +31,11 @@ public class modeloUsuario {
         leyenda = obj.modificar(tabla, datos,condicion );
         return leyenda;
     }
-    /*public String consultas(String tabla, String id, String id__0){
+    public String eliminar(String tabla, String id){
         String leyenda;
-        leyenda = obj.consultas(tabla,id);
+        leyenda = obj.borrar(tabla,id);
         return leyenda;
-    }*/
+    }
       
     
 }

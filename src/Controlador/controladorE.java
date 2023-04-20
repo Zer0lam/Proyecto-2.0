@@ -9,7 +9,11 @@ import Vista.Registro;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class controladorE implements ActionListener
 {
@@ -29,6 +33,7 @@ public class controladorE implements ActionListener
         _inven.txtPrecioU.setText(null);
         _inven.txtPrecioV.setText(null);
         _inven.txtNoEntrega.setText(null);
+        _inven.txtId.setText(null);
     }
     
     public controladorE(FRMInventairo inven, modeloUsuario model)
@@ -37,6 +42,10 @@ public class controladorE implements ActionListener
         this._model=model;
         
         this._inven.btnContinuarI.addActionListener(this);
+        this._inven.btnActualizar.addActionListener(this);
+        this._inven.btnEliminar.addActionListener(this);
+        this._inven.btnModificar.addActionListener(this);
+        
     }
     
     
@@ -49,6 +58,58 @@ public class controladorE implements ActionListener
             +_inven.txtCantidadM.getText()+","+_inven.txtPrecioU.getText()+","+_inven.txtPrecioV.getText()+","+"CURRENT_TIMESTAMP()"+","+_inven.txtNoEntrega.getText()+"");
             //leyenda =_model.alta("inventario", "null,'Barquillo',100,50,10,15,CURRENT_TIMESTAMP(),13");
             JOptionPane.showMessageDialog(null, leyenda);
+            limpiar();
+        }
+        if(e.getSource()==_inven.btnActualizar){
+        
+        List<String> datos = new ArrayList<>();
+        String consulta = _model.MostrarRegistro("inventario", "idInventario,nombre,stock,cantidadMinima,precioU,precioVenta,fechaEn,noElaboracion", "idInventario!=0");
+        datos.addAll(Arrays.asList(consulta.split(",")));
+
+        DefaultTableModel tabla2 = new DefaultTableModel();
+        tabla2.addColumn("Id");
+        tabla2.addColumn("Nombre");
+        tabla2.addColumn("Stock");
+        tabla2.addColumn("Cantidad M");
+        tabla2.addColumn("Precio U");
+        tabla2.addColumn("Precio V");
+        tabla2.addColumn("Fecha En");
+        tabla2.addColumn("Numero Elab");
+
+        _inven.tablaTinven.setModel(tabla2);
+
+        for (int i = 0; i < datos.size(); i += 8) 
+        {
+        Object[] fila = new Object[8];
+        for (int j = 0; j < 8; j++) {
+        fila[j] = datos.get(i + j);
+        }
+        tabla2.addRow(fila);
+        }
+        JOptionPane.showMessageDialog(null, "Se ha actualizado la tabla");
+
+          }
+      
+     
+        if (e.getSource() == _inven.btnModificar){
+            leyenda = _model.modificar("inventario","idUsuario= '"+_inven.txtId.getText()+"' , nombre = '"+_inven.txtNombreI.getText()+"' ,  stock= '"
+                    +_inven.txtCantidad.getText()+"' , cantidadMinima='"+_inven.txtCantidadM.getText()+"' ,  precioU= '"+_inven.txtPrecioU.getText()
+                    +"' , precioVenta='"+_inven.txtPrecioV.getText()+"'", "idUsuario = "+_inven.txtId.getText());
+           
+            
+            JOptionPane.showMessageDialog(null, leyenda);
+         
+        limpiar();//se limpian las cajas de texto
+     //agregar otros botones si se necesitan implementar
+        
+
+        }
+        if(e.getSource()== _inven.btnEliminar)
+        {
+         leyenda = _model.eliminar("inventario","idInventario = "+ _inven.txtId.getText());
+          JOptionPane.showMessageDialog(null, leyenda);
+          
+                  
             limpiar();
         }
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

@@ -4,6 +4,10 @@
 
 <xs:element name="altasResponse" type="tns:altasResponse"/>
 
+<xs:element name="borrar" type="tns:borrar"/>
+
+<xs:element name="borrarResponse" type="tns:borrarResponse"/>
+
 <xs:element name="modificar" type="tns:modificar"/>
 
 <xs:element name="modificarResponse" type="tns:modificarResponse"/>
@@ -25,15 +29,14 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="verEmpleado">
+<xs:complexType name="borrar">
 <xs:sequence>
-<xs:element name="tabla" type="xs:string" minOccurs="0"/>
-<xs:element name="datos" type="xs:string" minOccurs="0"/>
-<xs:element name="condicion" type="xs:string" minOccurs="0"/>
+<xs:element name="Tabla" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="verEmpleadoResponse">
+<xs:complexType name="borrarResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
@@ -48,6 +51,20 @@
 </xs:complexType>
 
 <xs:complexType name="modificarResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="verEmpleado">
+<xs:sequence>
+<xs:element name="tabla" type="xs:string" minOccurs="0"/>
+<xs:element name="datos" type="xs:string" minOccurs="0"/>
+<xs:element name="condicion" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="verEmpleadoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>

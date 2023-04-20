@@ -46,44 +46,11 @@ public class FRMtodo extends javax.swing.JFrame {
     // getters y setters
     
 }
-   /* List<Usuario> usuarios = new ArrayList<>();
-    for(ArrayList<String> user : users){
-      Usuario usuario = new Usuario(
-        user.get(4),
-        user.get(2),
-        user.get(3),
-        Integer.parseInt(user.get(0))
-    );
-    usuarios.add(usuario);
-}
-    Gson gson = new Gson();
-    String json = gson.toJson(usuarios);
-*/
 
 
     
-    /*public void ActualizarTabla(){
-        modeloUsuario db = new modeloUsuario();
-        List<ArrayList<String>> users = db.consultas("tb_usuarios", "*", "id != 0");
-        DefaultTableModel model = (DefaultTableModel) tablaT.getModel();
-        model.setRowCount(0);
-        try{
-            for(ArrayList<String> user : users){
-            String[] datos = new String[4];
-            datos[0] = user.get(4);
-            datos[1] = user.get(2);
-            datos[2] = user.get(3);
-            datos[3] = user.get(0);
-            
-            try{
-                model.addRow(datos);
-            }
-                catch(java.lang.IndexOutOfBoundsException e){}
-            }
-        }
-        catch(java.lang.IndexOutOfBoundsException e){}
-    }
-/*
+   
+
 
 
     /**
@@ -101,7 +68,6 @@ public class FRMtodo extends javax.swing.JFrame {
         btnEliminar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
         bntRegresar = new javax.swing.JButton();
-        txtId = new javax.swing.JTextField();
         txtName = new javax.swing.JTextField();
         txtLast = new javax.swing.JTextField();
         txtArea = new javax.swing.JTextField();
@@ -112,6 +78,7 @@ public class FRMtodo extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         btnActualizar = new javax.swing.JButton();
+        txtId = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -164,8 +131,8 @@ public class FRMtodo extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtLast, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                            .addComponent(txtId)
-                            .addComponent(txtName))
+                            .addComponent(txtName)
+                            .addComponent(txtId))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -212,10 +179,13 @@ public class FRMtodo extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtArea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtArea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel5))
@@ -261,6 +231,7 @@ public class FRMtodo extends javax.swing.JFrame {
         txtName.setText(tablaT.getValueAt(fila, 1).toString());
         txtLast.setText(tablaT.getValueAt(fila, 2).toString());
         txtArea.setText(tablaT.getValueAt(fila, 3).toString());
+        txtPass.setText(tablaT.getValueAt(fila, 4).toString());
     }//GEN-LAST:event_tablaTMouseClicked
 
     /**

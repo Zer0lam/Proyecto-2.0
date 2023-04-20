@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class controladorU implements ActionListener
 {
+
     private Registro _view;
     private modeloUsuario _model;
     private String usuarioSeleccionado = null;
@@ -27,7 +28,6 @@ public class controladorU implements ActionListener
         _view.txtNombreR.setText(null);
         _view.txtApellidoR.setText(null);
         _view.txtContrasenaR.setText(null);
-        _view.txtAreaR.setText(null);
         
     }
     public controladorU(Registro view, modeloUsuario model){
@@ -42,7 +42,7 @@ public class controladorU implements ActionListener
         String leyenda = "";
         if (e.getSource() == _view.btnContinuar){
             leyenda = _model.alta("empleados","null,'"+_view.txtNombreR.getText()+"','"+_view.txtApellidoR.getText()+"','"
-                    +_view.txtAreaR.getText()+"','"+ _view.txtContrasenaR.getText()+"'");
+                    +_view.txtArea.getSelectedItem()+"','"+ _view.txtContrasenaR.getText()+"'");
             //leyenda = _model.alta("tb_usuarios","'No se','12345','Pedro','Navarro',Null");
             JOptionPane.showMessageDialog(null, leyenda);
             limpiar();

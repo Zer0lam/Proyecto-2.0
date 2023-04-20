@@ -29,7 +29,7 @@ public class controladorT implements ActionListener{
         _todo.txtName.setText(null);
         _todo.txtLast.setText(null);
         _todo.txtPass.setText(null);
-        _todo.txtPass.setText(null);
+        _todo.txtArea.setText(null);
     }
     
     public controladorT(FRMtodo todo, modeloUsuario model)
@@ -38,6 +38,8 @@ public class controladorT implements ActionListener{
         this._model=model;
         
         this._todo.btnActualizar.addActionListener(this);
+        this._todo.btnModificar.addActionListener(this);
+        this._todo.btnEliminar.addActionListener(this);
     }
 
     
@@ -67,20 +69,35 @@ public class controladorT implements ActionListener{
         }
         tabla2.addRow(fila);
         }
+        JOptionPane.showMessageDialog(null, "Se ha actualizado la tabla");
 
           }
       
      
         if (e.getSource() == _todo.btnModificar){
-            leyenda = _model.modificar("empleados","'"+_todo.txtId.getText()+"'','"+_todo.txtName.getText()+"','"+_todo.txtLast.getText()+"','"
-                    +_todo.txtArea.getText()+"','"+ _todo.txtPass.getText()+"'");
-            //leyenda = _model.alta("tb_usuarios","'No se','12345','Pedro','Navarro',Null");
+            leyenda = _model.modificar("empleados","idUsuario= '"+_todo.txtId.getText()+"' , nombre = '"+_todo.txtName.getText()+"' ,  apellidoP= '"
+                    +_todo.txtLast.getText()+"' , area='"+_todo.txtArea.getText()+"' ,  contraseña= '"+_todo.txtPass.getText()
+                    +"'", "idUsuario = "+_todo.txtId.getText());
+           
+            
             JOptionPane.showMessageDialog(null, leyenda);
+         
+        limpiar();//se limpian las cajas de texto
+     //agregar otros botones si se necesitan implementar
+        
+
+        }
+        if(e.getSource()== _todo.btnEliminar)
+        {
+         leyenda = _model.eliminar("empleados","idUsuario = "+ _todo.txtId.getText());
+          JOptionPane.showMessageDialog(null, leyenda);
+          
+                  
             limpiar();
         }
-    }
+    
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    }}
     
     
 

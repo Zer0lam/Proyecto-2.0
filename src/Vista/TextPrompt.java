@@ -44,7 +44,7 @@ public class TextPrompt extends JLabel implements FocusListener, DocumentListene
 	private boolean showPromptOnce;
 	private int focusLost;
 
-	public TextPrompt(String text, JTextComponent component) {
+	public TextPrompt(String text, JTextField component) {
 		this(text, component, Show.ALWAYS);
 	}
 

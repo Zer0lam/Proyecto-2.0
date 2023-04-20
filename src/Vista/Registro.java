@@ -18,7 +18,6 @@ public class Registro extends javax.swing.JFrame {
         initComponents();
         TextPrompt nombre = new TextPrompt("Ingrese su nombre", txtNombreR);
         TextPrompt apellido = new TextPrompt("Ingrese su apellido", txtApellidoR);
-        TextPrompt area = new TextPrompt("Ingrese su área de trabajo", txtAreaR);
         TextPrompt contraseña = new TextPrompt("Ingrese su contraseña", txtContrasenaR);
     }
 
@@ -40,11 +39,11 @@ public class Registro extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtApellidoR = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtAreaR = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtContrasenaR = new javax.swing.JTextField();
         btnContinuar = new javax.swing.JButton();
         btnContinuar1 = new javax.swing.JButton();
+        txtArea = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -91,15 +90,6 @@ public class Registro extends javax.swing.JFrame {
         jLabel4.setText("Área");
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, -1));
 
-        txtAreaR.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtAreaR.setForeground(new java.awt.Color(153, 153, 153));
-        txtAreaR.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAreaRActionPerformed(evt);
-            }
-        });
-        jPanel3.add(txtAreaR, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 404, 30));
-
         jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel5.setText("Contraseña");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, -1, -1));
@@ -135,6 +125,9 @@ public class Registro extends javax.swing.JFrame {
         });
         jPanel3.add(btnContinuar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 90, 30));
 
+        txtArea.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Area", "Gerente", "Cajero", "Limpieza", "Vendedor" }));
+        jPanel3.add(txtArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 400, -1));
+
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 46, 670, 460));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -166,10 +159,6 @@ public class Registro extends javax.swing.JFrame {
     private void txtApellidoRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoRActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtApellidoRActionPerformed
-
-    private void txtAreaRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAreaRActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAreaRActionPerformed
 
     private void txtContrasenaRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaRActionPerformed
         // TODO add your handling code here:
@@ -231,7 +220,7 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     public javax.swing.JTextField txtApellidoR;
-    public javax.swing.JTextField txtAreaR;
+    public javax.swing.JComboBox<String> txtArea;
     public javax.swing.JTextField txtContrasenaR;
     public javax.swing.JTextField txtNombreR;
     // End of variables declaration//GEN-END:variables
