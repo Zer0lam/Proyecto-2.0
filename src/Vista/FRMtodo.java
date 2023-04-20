@@ -240,7 +240,7 @@ public class FRMtodo extends javax.swing.JFrame {
     }//GEN-LAST:event_tablaTMouseClicked
 
     private void bntRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntRegresarActionPerformed
-        // TODO add your handling code here:
+        // Se asigna el cofigo para botones volver:
         FRMMenu menu = new FRMMenu();
         this.setVisible(false);
         menu.setVisible(true);
