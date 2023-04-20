@@ -42,7 +42,7 @@ public class Registro extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtContrasenaR = new javax.swing.JTextField();
         btnContinuar = new javax.swing.JButton();
-        btnContinuar1 = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
         txtArea = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -114,16 +114,16 @@ public class Registro extends javax.swing.JFrame {
         });
         jPanel3.add(btnContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, 260, 40));
 
-        btnContinuar1.setBackground(new java.awt.Color(76, 168, 155));
-        btnContinuar1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        btnContinuar1.setForeground(new java.awt.Color(255, 255, 255));
-        btnContinuar1.setText("Volver");
-        btnContinuar1.addActionListener(new java.awt.event.ActionListener() {
+        btnVolver.setBackground(new java.awt.Color(76, 168, 155));
+        btnVolver.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        btnVolver.setForeground(new java.awt.Color(255, 255, 255));
+        btnVolver.setText("Volver");
+        btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnContinuar1ActionPerformed(evt);
+                btnVolverActionPerformed(evt);
             }
         });
-        jPanel3.add(btnContinuar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 90, 30));
+        jPanel3.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 90, 30));
 
         txtArea.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Area", "Gerente", "Cajero", "Limpieza", "Vendedor" }));
         jPanel3.add(txtArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 400, -1));
@@ -169,9 +169,13 @@ public class Registro extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnContinuarActionPerformed
 
-    private void btnContinuar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContinuar1ActionPerformed
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnContinuar1ActionPerformed
+        FRMMenu menu = new FRMMenu();
+        this.setVisible(false);
+        menu.setVisible(true);
+        
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,7 +214,7 @@ public class Registro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnContinuar;
-    public javax.swing.JButton btnContinuar1;
+    public javax.swing.JButton btnVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

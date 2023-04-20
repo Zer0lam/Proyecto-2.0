@@ -92,9 +92,9 @@ public class controladorE implements ActionListener
       
      
         if (e.getSource() == _inven.btnModificar){
-            leyenda = _model.modificar("inventario","idUsuario= '"+_inven.txtId.getText()+"' , nombre = '"+_inven.txtNombreI.getText()+"' ,  stock= '"
+            leyenda = _model.modificar("inventario","idInventario= '"+_inven.txtId.getText()+"' , nombre = '"+_inven.txtNombreI.getText()+"' ,  stock= '"
                     +_inven.txtCantidad.getText()+"' , cantidadMinima='"+_inven.txtCantidadM.getText()+"' ,  precioU= '"+_inven.txtPrecioU.getText()
-                    +"' , precioVenta='"+_inven.txtPrecioV.getText()+"'", "idUsuario = "+_inven.txtId.getText());
+                    +"' , precioVenta='"+_inven.txtPrecioV.getText()+"'", "idInventario = "+_inven.txtId.getText());
            
             
             JOptionPane.showMessageDialog(null, leyenda);

@@ -4,6 +4,7 @@
  */
 package Controlador;
 import Modelo.modeloUsuario;
+import Vista.FRMMenu;
 import Vista.Registro;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,7 +18,6 @@ public class controladorU implements ActionListener
 
     private Registro _view;
     private modeloUsuario _model;
-    private String usuarioSeleccionado = null;
    
     public void iniciar()
     {
@@ -35,6 +35,7 @@ public class controladorU implements ActionListener
         this._view=view;
         
         this._view.btnContinuar.addActionListener(this);
+        this._view.btnVolver.addActionListener(this);
         
     }
     @Override
@@ -47,45 +48,10 @@ public class controladorU implements ActionListener
             JOptionPane.showMessageDialog(null, leyenda);
             limpiar();
         }
-        
-    }
-       /*if (e.getSource() == _tablaTodo.btnEliminar){
-            
-            if(usuarioSeleccionado.isBlank()){
-                JOptionPane.showMessageDialog(null, leyenda);
-            }
-            else{
-                _model.borrar("tb_usuarios", "id="+usuarioSeleccionado);
-            }
-            _tablaTodo.ActualizarTabla();
-            leyenda = _model.borrar("tb_usuraios", _view.txtUsuario.getText());
-            JOptionPane.showMessageDialog(null, leyenda);
-            limpiar();
-        }
-        if(e.getSource() == _view.btnTodo){
-            _tablaTodo.setVisible(true);
-            _view.setVisible(false);
-            _tablaTodo.ActualizarTabla();
-        }
-        if(e.getSource() == _tablaTodo.bntRegresar){
-            _view.setVisible(true);
-            _tablaTodo.setVisible(false);
-            
-        }
-       */
-    
-      /* if(e.getSource() == _tablaTodo.btnModificar){
-           leyenda = _model.modificarRegistro("tb_usuarios","id = "+_tablaTodo.txtId.getText() + 
-                   ", nombre = '" + _tablaTodo.txtName.getText() + "', apPaterno = '" + _tablaTodo.txtLast.getText() +
-                   "', user = '" + _tablaTodo.txtUser.getText() + "', psw = " + _tablaTodo.txtPass.getText(),
-                   "id = " + _tablaTodo.txtId.getText());
-            JOptionPane.showMessageDialog(null, leyenda);
-            limpiar();
-            _tablaTodo.ActualizarTabla();
-       }
-        */
+
         //throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+}
     
     
 

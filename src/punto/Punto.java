@@ -4,12 +4,8 @@
  */
 package punto;
 
-import Controlador.controladorU;
-import Modelo.modeloUsuario;
-import Vista.FRMInventairo;
 import Vista.FRMMenu;
-import Vista.FRMtodo;
-import Vista.FRMusuario;
+import Vista.Login;
 
 /**
  *

@@ -102,6 +102,11 @@ public class FRMtodo extends javax.swing.JFrame {
         btnModificar.setText("Modificar");
 
         bntRegresar.setText("Volver");
+        bntRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntRegresarActionPerformed(evt);
+            }
+        });
 
         txtArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -233,6 +238,13 @@ public class FRMtodo extends javax.swing.JFrame {
         txtArea.setText(tablaT.getValueAt(fila, 3).toString());
         txtPass.setText(tablaT.getValueAt(fila, 4).toString());
     }//GEN-LAST:event_tablaTMouseClicked
+
+    private void bntRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntRegresarActionPerformed
+        // TODO add your handling code here:
+        FRMMenu menu = new FRMMenu();
+        this.setVisible(false);
+        menu.setVisible(true);
+    }//GEN-LAST:event_bntRegresarActionPerformed
 
     /**
      * @param args the command line arguments

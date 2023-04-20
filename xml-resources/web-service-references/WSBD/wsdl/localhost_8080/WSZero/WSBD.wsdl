@@ -4,23 +4,11 @@
 <xsd:import namespace="http://pkgWS/" schemaLocation="http://localhost:8080/WSZero/WSBD?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="verEmpleado">
-<part name="parameters" element="tns:verEmpleado"/>
-</message>
-<message name="verEmpleadoResponse">
-<part name="parameters" element="tns:verEmpleadoResponse"/>
-</message>
 <message name="altas">
 <part name="parameters" element="tns:altas"/>
 </message>
 <message name="altasResponse">
 <part name="parameters" element="tns:altasResponse"/>
-</message>
-<message name="borrar">
-<part name="parameters" element="tns:borrar"/>
-</message>
-<message name="borrarResponse">
-<part name="parameters" element="tns:borrarResponse"/>
 </message>
 <message name="modificar">
 <part name="parameters" element="tns:modificar"/>
@@ -28,27 +16,39 @@
 <message name="modificarResponse">
 <part name="parameters" element="tns:modificarResponse"/>
 </message>
+<message name="borrar">
+<part name="parameters" element="tns:borrar"/>
+</message>
+<message name="borrarResponse">
+<part name="parameters" element="tns:borrarResponse"/>
+</message>
+<message name="verEmpleado">
+<part name="parameters" element="tns:verEmpleado"/>
+</message>
+<message name="verEmpleadoResponse">
+<part name="parameters" element="tns:verEmpleadoResponse"/>
+</message>
 <portType name="WSBD">
-<operation name="verEmpleado">
-<input wsam:Action="http://pkgWS/WSBD/verEmpleadoRequest" message="tns:verEmpleado"/>
-<output wsam:Action="http://pkgWS/WSBD/verEmpleadoResponse" message="tns:verEmpleadoResponse"/>
-</operation>
 <operation name="altas">
 <input wsam:Action="http://pkgWS/WSBD/altasRequest" message="tns:altas"/>
 <output wsam:Action="http://pkgWS/WSBD/altasResponse" message="tns:altasResponse"/>
-</operation>
-<operation name="borrar">
-<input wsam:Action="http://pkgWS/WSBD/borrarRequest" message="tns:borrar"/>
-<output wsam:Action="http://pkgWS/WSBD/borrarResponse" message="tns:borrarResponse"/>
 </operation>
 <operation name="modificar">
 <input wsam:Action="http://pkgWS/WSBD/modificarRequest" message="tns:modificar"/>
 <output wsam:Action="http://pkgWS/WSBD/modificarResponse" message="tns:modificarResponse"/>
 </operation>
+<operation name="borrar">
+<input wsam:Action="http://pkgWS/WSBD/borrarRequest" message="tns:borrar"/>
+<output wsam:Action="http://pkgWS/WSBD/borrarResponse" message="tns:borrarResponse"/>
+</operation>
+<operation name="verEmpleado">
+<input wsam:Action="http://pkgWS/WSBD/verEmpleadoRequest" message="tns:verEmpleado"/>
+<output wsam:Action="http://pkgWS/WSBD/verEmpleadoResponse" message="tns:verEmpleadoResponse"/>
+</operation>
 </portType>
 <binding name="WSBDPortBinding" type="tns:WSBD">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="verEmpleado">
+<operation name="altas">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -57,7 +57,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="altas">
+<operation name="modificar">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -75,7 +75,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="modificar">
+<operation name="verEmpleado">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
