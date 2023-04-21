@@ -114,19 +114,19 @@ public class Registro extends javax.swing.JFrame {
         });
         jPanel3.add(btnContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, 260, 40));
 
-        btnVolver.setBackground(new java.awt.Color(76, 168, 155));
+        btnVolver.setBackground(new java.awt.Color(219, 238, 235));
         btnVolver.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnVolver.setForeground(new java.awt.Color(255, 255, 255));
-        btnVolver.setText("Volver");
+        btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/volver.png"))); // NOI18N
         btnVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVolverActionPerformed(evt);
             }
         });
-        jPanel3.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 90, 30));
+        jPanel3.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 40, 32));
 
         txtArea.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Area", "Gerente", "Cajero", "Limpieza", "Vendedor" }));
-        jPanel3.add(txtArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 400, -1));
+        jPanel3.add(txtArea, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 232, 400, 30));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 46, 670, 460));
 
