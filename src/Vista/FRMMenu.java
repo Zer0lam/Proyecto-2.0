@@ -37,6 +37,7 @@ public class FRMMenu extends javax.swing.JFrame {
         btnPendinete = new javax.swing.JButton();
         btnInventario = new javax.swing.JButton();
         btnEmpleados = new javax.swing.JButton();
+        btnReporte = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,6 +79,9 @@ public class FRMMenu extends javax.swing.JFrame {
             }
         });
         jPanel3.add(btnEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 210, 90));
+
+        btnReporte.setText("Reporte");
+        jPanel3.add(btnReporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, -1, -1));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 56, 770, 450));
 
@@ -162,6 +166,7 @@ public class FRMMenu extends javax.swing.JFrame {
     public javax.swing.JButton btnEmpleados;
     public javax.swing.JButton btnInventario;
     private javax.swing.JButton btnPendinete;
+    public javax.swing.JButton btnReporte;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
